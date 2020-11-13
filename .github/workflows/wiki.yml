@@ -13,8 +13,8 @@ jobs:
         - name: Sync with local action
           uses: kai-tub/external-repo-sync-action@v1
           with:
-            repository: "Cx01N/empire-repo-wiki"
-            source-directory: "/wiki"
+            repository: "Cx01N/empire-repo-wiki@master"
+            source-directory: "./docs"
             include-patterns: "*.md"
           env:
             GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
