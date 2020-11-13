@@ -15,7 +15,6 @@ jobs:
       - name: Sync with local action
         uses: Cx01N/empire-repo-wiki
         with:
-          source-directory: ""
           include-patterns: "*.md"
         env:
           GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
