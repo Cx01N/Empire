@@ -1,0 +1,2 @@
+- name: External repo/wiki sync action
+  uses: kai-tub/external-repo-sync-action@v1
