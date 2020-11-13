@@ -10,11 +10,9 @@ jobs:
     name: Sync docs
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout current version
-        uses: actions/checkout@v2
-      - name: Sync with local action
-        uses: Cx01N/empire-repo-wiki
-        with:
-          include-patterns: "*.md"
-        env:
-          GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
+        - name: Sync with local action
+          uses: kai-tub/external-repo-sync-action@v1
+          with:
+            repository: "https://github.com/Cx01N/empire-repo-wiki"
+          env:
+            GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
