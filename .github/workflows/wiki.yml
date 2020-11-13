@@ -1,3 +1,24 @@
-- name: External repo/wiki sync action
-  uses: kai-tub/external-repo-sync-action@v1
-  repository: https://github.com/Cx01N/empire-repo-wiki
+name: Wiki Sync
+
+on:
+  push:
+    branches: 
+      - master
+
+jobs:
+  sync_docs:
+    name: Sync docs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout current version
+        uses: actions/checkout@v2
+      - name: Create files to sync
+        run: |
+          mkdir docs/
+          touch docs/hello.md
+      - name: Sync with local action
+        uses: kai-tub/external-repo-sync-action@v1
+        with:
+          source-directory: "https://github.com/Cx01N/empire-repo-wiki"
+        env:
+          GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
