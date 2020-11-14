@@ -14,14 +14,13 @@ jobs:
           uses: actions/checkout@v2
         - name: Create files to sync
           run: |
-            mkdir docs/
-            gh repo clone Cx01N/empire-repo-wiki 
+            git clone Cx01N/empire-repo-wiki
             
         - name: Sync with local action
           uses: kai-tub/external-repo-sync-action@v1
           with:
             repository: "Cx01N/Empire.wiki.git"
-            source-directory: "./docs"
+            source-directory: "./empire-repo-wiki"
             include-patterns: "*.md"
           env:
             GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
