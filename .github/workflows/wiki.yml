@@ -15,7 +15,8 @@ jobs:
         - name: Create files to sync
           run: |
             mkdir docs/
-            git clone https://github.com/Cx01N/empire-repo-wiki
+            git clone https://github.com/Cx01N/empire-repo-wiki.git
+            
         - name: Sync with local action
           uses: kai-tub/external-repo-sync-action@v1
           with:
