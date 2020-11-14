@@ -20,7 +20,7 @@ jobs:
           uses: kai-tub/external-repo-sync-action@v1
           with:
             repository: "Cx01N/empire-repo-wiki"
-            source-directory: ".docs"
+            source-directory: "./docs"
             include-patterns: "*.md"
           env:
             GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
