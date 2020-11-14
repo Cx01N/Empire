@@ -15,11 +15,12 @@ jobs:
         - name: Create files to sync
           run: |
             mkdir docs/
+            gh repo clone Cx01N/empire-repo-wiki 
             
         - name: Sync with local action
           uses: kai-tub/external-repo-sync-action@v1
           with:
-            repository: "Cx01N/empire-repo-wiki"
+            repository: "Cx01N/Empire.wiki.git"
             source-directory: "./docs"
             include-patterns: "*.md"
           env:
