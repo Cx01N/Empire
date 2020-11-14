@@ -21,6 +21,5 @@ jobs:
             repository: "Cx01N/empire-repo-wiki"
             source-directory: "./docs"
             include-patterns: "*.md"
-            dry-run: true
           env:
             GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
