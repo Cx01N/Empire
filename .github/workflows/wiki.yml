@@ -15,6 +15,6 @@ jobs:
             uses: joeizzard/action-wiki-sync@master
             with:
                 username: Cx01N
-                access_token: ${{ secrets.GITHUB_TOKEN }}
+                access_token: ${{ secrets.GH_ACCESS_TOKEN }}
                 wiki_folder: wiki
                 commit_username: 'Cx01N'
