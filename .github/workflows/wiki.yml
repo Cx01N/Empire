@@ -1,26 +1,20 @@
-name: Wiki-Sync
-
 on:
-  push:
-    branches: 
-      - master
-
+    push:
+        branches:
+            - master
+    pull_request:
+        branches:
+            - master
+name: Wiki Sync
 jobs:
-  sync_docs:
-    name: Sync docs
-    runs-on: ubuntu-latest
-    steps:
-        - name: Checkout current version
-          uses: actions/checkout@v2
-        - name: Create files to sync
-          run: |
-            git clone https://github.com/Cx01N/empire-repo-wiki.git
-            
-        - name: Sync with local action
-          uses: kai-tub/external-repo-sync-action@v1
-          with:
-            repository: "Cx01N/Empire.wiki.git"
-            source-directory: "./empire-repo-wiki"
-            include-patterns: "*.md"
-          env:
-            GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
+    update-wiki:
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@master
+          - name: Sync Wiki
+            uses: joeizzard/action-wiki-sync@master
+            with:
+                username: Cx01N
+                access_token: ${{ secrets.GITHUB_TOKEN }}
+                wiki_folder: wiki
+                commit_username: 'Cx01N'
