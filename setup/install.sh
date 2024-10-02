@@ -238,10 +238,6 @@ if ! command_exists dotnet; then
   install_dotnet
 fi
 
-if ! command_exists nim; then
-  install_nim
-fi
-
 if ! command_exists mysql; then
   install_mysql
 fi
