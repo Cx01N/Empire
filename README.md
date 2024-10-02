@@ -1,111 +1,138 @@
+<div align="center">
+
 ![Empire](https://user-images.githubusercontent.com/20302208/70022749-1ad2b080-154a-11ea-9d8c-1b42632fd9f9.jpg)
+[![Donate](https://img.shields.io/badge/Donate-Sponsor-blue?style=plastic&logo=github)](https://github.com/sponsors/BC-SECURITY)
+[![Docs](https://img.shields.io/badge/Wiki-Docs-green?style=plastic&logo=wikipedia)](https://bc-security.gitbook.io/empire-wiki/)
+[![Discord](https://img.shields.io/discord/716165691383873536?style=plastic&logo=discord)](https://discord.gg/P8PZPyf)
+[![Blog](https://img.shields.io/badge/Blog-Read%20me-orange?style=plastic&logo=wordpress)](https://www.bc-security.org/blog)
+[![Twitter URL](https://img.shields.io/twitter/follow/BCSecurity?style=plastic&logo=twitter)](https://twitter.com/BCSecurity)
+[![Twitter URL](https://img.shields.io/twitter/follow/EmpireC2Project?style=plastic&logo=twitter)](https://twitter.com/EmpireC2Project)
+[![YouTube URL](https://img.shields.io/youtube/channel/views/UCIV4xSntF1h1bvFt8SUfzZg?style=plastic&logo=youtube)](https://www.youtube.com/channel/UCIV4xSntF1h1bvFt8SUfzZg)
+[![LinkedIn](https://img.shields.io/badge/Linkedin-blue?style=plastic&logo=linkedin&logoColor=#0A66C2)](https://www.linkedin.com/company/bc-security/)
 
-[1.1]: http://i.imgur.com/tXSoThF.png (twitter icon with padding)
-[2.1]: http://i.imgur.com/P3YfQoD.png (facebook icon with padding)
-[3.1]: http://i.imgur.com/yCsTjba.png (google plus icon with padding)
-[4.1]: http://i.imgur.com/YckIOms.png (tumblr icon with padding)
-[5.1]: http://i.imgur.com/1AGmwO3.png (dribbble icon with padding)
-[6.1]: http://i.imgur.com/0o48UoR.png (github icon with padding)
-
-[1]: https://twitter.com/bcsecurity1
-[2]: http://www.facebook.com/XXXXXXX
-[3]: https://plus.google.com/XXXXXXX
-[4]: http://XXXXXXX.tumblr.com
-[5]: http://dribbble.com/XXXXXXX
-[6]: http://www.github.com/BC-SECURITY
-[7]: https://www.bc-security.org/blog
-
-![GitHub Release](https://img.shields.io/github/v/release/BC-SECURITY/Empire)
-![GitHub contributors](https://img.shields.io/github/contributors/BC-SECURITY/Empire)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/BC-SECURITY/Empire)
-![GitHub stars](https://img.shields.io/github/stars/BC-SECURITY/Empire)
-![GitHub](https://img.shields.io/github/license/BC-Security/Empire)
-[![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/fold_left.svg?style=flat)](https://twitter.com/BCSecurity1)
-
-Keep up-to-date on our blog at [https://www.bc-security.org/blog][7]
+</div>
 
 # Empire
-Empire 3.1 is a post-exploitation framework that includes a pure-PowerShell 2.0 Windows agent, and compatibility with Python 3.x Linux/OS X agents. It is the merger of the previous PowerShell Empire and Python EmPyre projects. The framework offers cryptologically-secure communications and flexible architecture.
+Empire is a post-exploitation and adversary emulation framework that is used to aid Red Teams and Penetration Testers. The Empire server is written in Python 3 and is modular to allow operator flexibility. Empire comes built-in with a client that can be used remotely to access the server. There is also a GUI available for remotely accessing the Empire server, [Starkiller](https://github.com/BC-SECURITY/Starkiller).
 
-On the PowerShell side, Empire implements the ability to run PowerShell agents without needing powershell.exe, rapidly deployable post-exploitation modules ranging from key loggers to Mimikatz, and adaptable communications to evade network detection, all wrapped up in a usability-focused framework. PowerShell Empire premiered at [BSidesLV in 2015](https://www.youtube.com/watch?v=Pq9t59w0mUI) and Python EmPyre premiered at HackMiami 2016. BC-Security presented updates to further evade Microsoft Antimalware Scan Interface (AMSI) and JA3/S signatures at [DEF CON 27](https://github.com/BC-SECURITY/DEFCON27).
+### Features
+- Server/Client Architecture for Multiplayer Support
+- Supports GUI & CLI Clients
+- Fully encrypted communications
+- HTTP/S, Malleable HTTP, OneDrive, Dropbox, and PHP Listeners
+- Massive library (400+) of supported tools in PowerShell, C#, & Python
+- Donut Integration for shellcode generation
+- Modular plugin interface for custom server features
+- Flexible module interface for adding new tools
+- Integrated obfuscation using [ConfuserEx 2](https://github.com/mkaring/ConfuserEx) & [Invoke-Obfuscation](https://github.com/danielbohannon/Invoke-Obfuscation)
+- In-memory .NET assembly execution
+- Customizable Bypasses
+- JA3/S and JARM Evasion
+- MITRE ATT&CK Integration
+- Integrated Roslyn compiler (Thanks to [Covenant](https://github.com/cobbr/Covenant))
+- Docker, Kali, ParrotOS, Ubuntu 20.04/22.04, and Debian 10/11/12 Install Support
 
-Empire relies heavily on the work from several other projects for its underlying functionality. We have tried to call out a few of those people we've interacted with [heavily here](http://www.powershellempire.com/?page_id=2) and have included author/reference link information in the source of each Empire module as appropriate. If we have failed to properly cite existing or prior work, please let us know at Empire@BC-Security.org.
+### Agents
+- PowerShell
+- Python 3
+- C#
+- IronPython 3
 
-Empire is developed by [@harmj0y](https://twitter.com/harmj0y), [@sixdub](https://twitter.com/sixdub), [@enigma0x3](https://twitter.com/enigma0x3), [@rvrsh3ll](https://twitter.com/424f424f), [@killswitch_gui](https://twitter.com/killswitch_gui), [@xorrior](https://twitter.com/xorrior), and [@bcsecurity1](https://twitter.com/BCSecurity1). While the main fork for Empire is no longer maintained, this fork is maintained by [BC-Security](https://www.bc-security.org) and will continue to receive updates.
+### Modules
+- [Assembly Execution](https://github.com/BC-SECURITY/Empire/blob/master/empire/server/data/module_source/code_execution/Invoke-Assembly.ps1)
+- [BOF Execution](https://github.com/airbus-cert/Invoke-Bof)
+- [Mimikatz](https://github.com/gentilkiwi/mimikatz)
+- [Seatbelt](https://github.com/GhostPack/Seatbelt)
+- [Rubeus](https://github.com/GhostPack/Rubeus)
+- [SharpSploit](https://github.com/cobbr/SharpSploit)
+- [Certify](https://github.com/GhostPack/Certify)
+- [ProcessInjection](https://github.com/3xpl01tc0d3r/ProcessInjection)
+- And Many More
 
+## Sponsors
+<div align="center">
+
+[<img src="https://github.com/user-attachments/assets/604fbb97-4641-4a15-a6ba-039f67694f15" width="200"/>](https://www.route4me.com//)
+
+
+[<img src="https://github.com/user-attachments/assets/8685f8de-ad66-46d3-8751-8f2bdddc4ac1" width="100"/>](https://www.instagram.com/purpl3_cult/)
+</div>
 
 ## Release Notes
-In Empire 3.1, we will no longer be actively supporting the Python 2.7 base code. If you wish to continue to leverage Python 2.7 then please use the [3.0.x Releases](https://github.com/BC-SECURITY/Empire/releases), since they were built to ensure backward compatibility.
 
-One of the most significant updates in 3.1 is the addition of Multi-User Collaboration to the API. This update adds the ability of users to interact with Empire in an entirely new way. Previously, API users would share a single login and be unable to track individual taskings. This has been completely reworked to allow User Management through the API. This feature is essential for integration with [Starkiller](https://github.com/BC-SECURITY/Starkiller).
+Please see our [Releases](https://github.com/BC-SECURITY/Empire/releases) or [Changelog](/CHANGELOG.md) page for detailed release notes.
 
-Next, we have added Function Name Aliasing, which automates the ability to randomize function names inside of Empire. This proof of concept is a huge step forward in evasion since it tests the ability to mask individual functions inside of Empire. Function name aliasing is currently only built for Invoke-Empire and Invoke-Mimikatz currently, but we will be expanding this functionality in the future.
-
-Please see our [Releases](https://github.com/BC-SECURITY/Empire/releases) or [Changelog](/changelog) page for detailed release notes.
-## Install
-As of Empire 3.1.0, Empire only officially supports Python 3. If you still need Python 2 support, please use the [3.0.x branch](https://github.com/BC-SECURITY/Empire/tree/3.0.x) or releases. Also consider using our [Prebuilt Docker containers](#Docker) which use Python 3.
-
-__Note:__ Run ```./setup/reset.sh``` before starting Empire 3.1 for the first time.
-### Kali
-
-You can install the latest version of Empire by running the following:
-
+###  Quickstart
+When cloning this repository, you will need to recurse submodules.
 ```sh
-apt install powershell-empire
+git clone --recursive https://github.com/BC-SECURITY/Empire.git
 ```
 
-### Github
-To install and run:
+Check out the [Installation Page](https://bc-security.gitbook.io/empire-wiki/quickstart/installation) for install instructions.
 
-```sh
-git clone https://github.com/BC-SECURITY/Empire.git
-cd Empire
-sudo ./setup/install.sh
-```
-
-
-### Docker
-If you want to run Empire using a pre-built docker container:
+Note: The `main` branch is a reflection of the latest changes and may not always be stable.
+After cloning the repo, you can checkout the latest stable release by running the `setup/checkout-latest-tag.sh` script.
 ```bash
-docker pull bcsecurity/empire:{version}
-docker run -it bcsecurity/empire:{version}
-
-# with persistent storage
-docker pull bcsecurity/empire:{version}
-docker create -v /empire --name data bcsecurity/empire:{version}
-docker run -it --volumes-from data bcsecurity/empire:{version}
-
-# if you prefer to be dropped into bash instead of directly into empire
-docker run -it --volumes-from data bcsecurity/empire:{version} /bin/bash
+git clone --recursive https://github.com/BC-SECURITY/Empire.git
+cd Empire
+./setup/checkout-latest-tag.sh
+./ps-empire install -y
 ```
 
-All image versions can be found at: https://hub.docker.com/r/bcsecurity/empire/
-* The last commit from master will be deployed to the `latest` tag
-* The last commit from the dev branch will be deployed to the `dev` tag
-* All github tagged releases will be deployed using their version numbers (v3.0.0, v3.1.0, etc)
+If you are using the sponsors version of Empire, it will pull the sponsors version of Starkiller.
+Because these are private repositories, you need to have ssh credentials configured for GitHub.
+Instructions can be found [here](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh).
 
-## Quickstart
+#### Server
 
-Check out the [Empire wiki](https://github.com/BC-SECURITY/Empire/wiki/Quickstart) for instructions on getting started with Empire.
+```bash
+# Start Server
+./ps-empire server
 
-## To Do List
+# Help
+./ps-empire server -h
+```
 
-* [Invoke-SocksProxy](https://github.com/p3nt4/Invoke-SocksProxy)
-* Python 2.7 launchers calling back to Python 3.x
-* DNS over HTTPS launcher
-* Header randomization
-* Integration with [RedELK](https://github.com/outflanknl/RedELK)
+#### Client
+
+```bash
+# Start Client
+./ps-empire client
+
+# Help
+./ps-empire client -h
+```
+
+Check out the [Empire Docs](https://bc-security.gitbook.io/empire-wiki/) for more instructions on installing and using with Empire.
+For a complete list of changes, see the [changelog](./changelog).
+
+## Starkiller
+<div align="center"><img width="125" src="https://user-images.githubusercontent.com/20302208/208271792-91973457-2d6c-4080-8625-0f9eebed0a82.png"></div>
+
+[Starkiller](https://github.com/BC-SECURITY/Starkiller) is a web application GUI for PowerShell Empire that interfaces remotely with Empire via its API.
+Starkiller can be ran as a replacement for the Empire client or in a mixed environment with Starkiller and Empire clients.
+As of 5.0, Starkiller is packaged in Empire as a git submodule and doesn't require any additional setup.
 
 ## Contribution Rules
+See [Contributing](./.github/CONTRIBUTING.md)
 
-Contributions are more than welcome! The more people who contribute to the project the better Empire will be for everyone. Below are a few guidelines for submitting contributions.
+## Contributors
+A special thanks to the following contributors for their help with Empire:
 
-* As of Empire 3.1.0, Empire only officially supports Python 3. If you still need Python 2 support, please use the [3.0.x branch](https://github.com/BC-SECURITY/Empire/tree/3.0.x) or releases.
-* Submit pull requests to the [dev branch](https://github.com/BC-SECURITY/Empire/tree/dev). After testing, changes will be merged to master.
-* Depending on what you're working on, base your module on [./lib/modules/powershell_template.py](lib/modules/powershell_template.py) or [./lib/modules/python_template.py](lib/modules/python_template.py). **Note** that for some modules you may need to massage the output to get it into a nicely displayable text format [with Out-String](https://github.com/PowerShellEmpire/Empire/blob/0cbdb165a29e4a65ad8dddf03f6f0e36c33a7350/lib/modules/situational_awareness/network/powerview/get_user.py#L111).
-* Cite previous work in the **'Comments'** module section.
-* If your script.ps1 logic is large, may be reused by multiple modules, or is updated often, consider implementing the logic in the appropriate **data/module_source/*** directory and [pulling the script contents into the module on tasking](https://github.com/PowerShellEmpire/Empire/blob/0cbdb165a29e4a65ad8dddf03f6f0e36c33a7350/lib/modules/situational_awareness/network/powerview/get_user.py#L85-L95).
-* Use [approved PowerShell verbs](https://technet.microsoft.com/en-us/library/ms714428(v=vs.85).aspx) for any functions.
-* PowerShell Version 2 compatibility is **STRONGLY** preferred.
-* TEST YOUR MODULE! Be sure to run it from an Empire agent and test Python 3.x functionality before submitting a pull to ensure everything is working correctly.
-* For additional guidelines for your PowerShell code itself, check out the [PowerSploit style guide](https://github.com/PowerShellMafia/PowerSploit/blob/master/README.md).
+[@harmj0y](https://twitter.com/harmj0y)
+[@sixdub](https://twitter.com/sixdub)
+[@enigma0x3](https://twitter.com/enigma0x3)
+[@rvrsh3ll](https://twitter.com/424f424f)
+[@killswitch_gui](https://twitter.com/killswitch_gui)
+[@xorrior](https://twitter.com/xorrior)
+[@Cx01N](https://twitter.com/Cx01N_)
+[@Hubbl3](https://twitter.com/_Hubbl3)
+[@Vinnybod](https://twitter.com/_vinnybod)
+
+## Official Discord Channel
+Join us in [our Discord](https://discord.gg/P8PZPyf) with any comments, questions, concerns, or problems!
+
+<p align="center">
+<a href="https://discord.gg/P8PZPyf">
+<img src="https://discordapp.com/api/guilds/716165691383873536/widget.png?style=banner3"/>
+</p>
